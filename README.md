@@ -7,7 +7,7 @@ A latex template for bachelor thesis in the IUBH
 * Ziel dieses Templates ist es nur einen einfachen Einstieg in ein eigenes Template zu bieten.
 * 
 * Ich bin kein begnadeter Latex Designer und hab hier nach bestem Wissen und Gewissen gebaut.
-* Ich übernehme keine Haftung für irgendeine Richtigkeit oder Fehler!
+* Ich übernehme keine Haftung für irgendwelche Fehler oder dass das Dokument dem neuesten Stand entspricht!
 * 
 * Wenn ihr konstruktive Kritik habt ist die jederzeit willkommen :-)
 **********************************************************************************************************
