@@ -1,0 +1,83 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Dieses Template stellt die Vorgaben der IUBH an wissenschaftliche Dokumente in Latex dar
+%Bitte prüfe ob alles korrekt ist, ich übernehme keine Haftung für Fehler!
+%Da die IUBH auf Arial als Schriftart besteht muss xelatex zum kompilieren genutzt werden
+%Erstellung 06/ 2020
+%Author: Markus Rest
+%Email: mgv@gmx.de
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Im Idealfall muss nur in dem Unterordner  src/ editiert werden.
+% Der Unterordner fixedsrc/ enthält nur Dinge, die sich selbst generieren
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper,11pt,listof=numbered,bibliography=numbered]{scrreport} % Allgemeiner Text – 11 Pkt
+
+% Uservariablen - Art des Textes, Name, Matrikelnummer, ...
+\include{src/basics}
+
+%Benutzte Packages hier rein
+\include{fixedsrc/used_packages}
+
+% Standards einstellen - Abstände, Schriften usw. Einstellen
+\include{fixedsrc/standard_layout}
+
+%Glossareinträge verwalten
+\include{src/glossary_entries}
+
+\begin{document}
+	\pagenumbering{Roman}
+	\setcounter{tocdepth}{2}
+%%%%%
+%Nichtausführungen zum Text
+	\include{fixedsrc/titlepage} %Titelseite
+	\include{fixedsrc/nondisclosure} %Sperrvermerk
+	\include{src/dedication} 	%Widmung (freiwillig)
+	\include{src/credits}	%Danksagung (freiwillig)
+	\include{src/abstract} 	%Abstract
+	\tableofcontents 	%Inhaltsverzeichnis
+	\newpage
+	\renewcommand*{\thechapter}{\Roman{chapter}}
+	\listoffigures	%Figurenverzeichnis (bei Bedarf)
+	\newpage
+	\listoftables %Tabellenverzeichnis
+	\newpage
+	\include{src/acronyms}%Abkürzungsverzeichnis (bei Bedarf)
+%Nichtausführungen zum Text
+%%%%%
+
+	\include{fixedsrc/change_start_to_main}
+   
+%%%%%
+%Ausführungen zum Text
+    \include{src/introduction/intro_main} %Einleitung (normalerweise Kapitel 1 genannt)
+    \include{src/stateOfTheArt/sota_main} %Literaturanalyse (Stand der Forschung, normalerweise Kapitel 2 genannt)
+    \include{src/methodology/method_main}%Forschungsmethodik (normalerweise Kapitel 3 genannt)
+    \include{src/implementation/impl_main}%Forschungsergebnisse (normalerweise Kapitel 4 genannt)
+    \include{src/criticalReflection/reflect_main}%Schlussfolgerung (normalerweise Kapitel 5 genannt)
+    \include{src/conclusion/concl_main}%Empfehlungen/Einschränkungen (kann ein separates Kapitel sein)	
+% Ende Ausführungen zum Text
+%%%%%
+    
+    \include{fixedsrc/change_main_to_end}
+    
+%%%%
+% Nichtausführungen zum Text
+	%Quellenverzeichnis
+	\bibliography{src/references}{}
+	\bibliographystyle{apalike}
+	%Anhang
+	\include{src/appendix/append_main}
+	%Glossar (freiwillig)
+	\printglossary
+	\newpage
+	%Eidesstattliche Erklärung (auch Echtheitserklärung genannt)
+	\include{fixedsrc/affidavit}
+% Nichtausführungen zum Text
+%%%%%
+\end{document}
