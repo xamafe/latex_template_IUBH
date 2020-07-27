@@ -29,8 +29,6 @@ https://www.texstudio.org
 
 Known issues:
 * DAS LITERATURVERZEICHNIS ARBEITET MIT APA! NICHT MIT DER VORLAGE DER IUBH!
-* Die Links aus dem Inhaltsverzeichnis verzweigen nicht sauber auf die römischen Kapitel im zweiten Teil
-* Die Seitennummerierung des zweiten Teils römischer Zählung beginnt nicht automatisch bei dem der erste Teil aufgehört hat
 
 
 
